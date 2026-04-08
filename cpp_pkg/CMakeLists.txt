@@ -24,19 +24,28 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-# Define minimal publisher target and link link_libraries
+# Define minimal publisher target and link_libraries
 add_executable(minimal_publisher src/minimal_publisher.cpp)
 ament_target_dependencies(minimal_publisher rclcpp example_interfaces)
 
-# Define minimal subscriber target and link link_libraries
+# Define minimal subscriber target and link_libraries
 add_executable(minimal_subscriber src/minimal_subscriber.cpp)
 ament_target_dependencies(minimal_subscriber rclcpp example_interfaces)
 
+# Define minimal_server target and link libraries
+add_executable(minimal_server src/minimal_server.cpp)
+ament_target_dependencies(minimal_server rclcpp example_interfaces)
+
+# Define minimal_client target and link libraries
+add_executable(minimal_client src/minimal_client.cpp)
+ament_target_dependencies(minimal_client rclcpp example_interfaces)
 
 #Install binaries to specific folder
 install(TARGETS
   minimal_publisher
   minimal_subscriber
+  minimal_server
+  minimal_client
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
