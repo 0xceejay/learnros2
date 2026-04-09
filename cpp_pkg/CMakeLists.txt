@@ -45,6 +45,10 @@ ament_target_dependencies(minimal_client rclcpp example_interfaces)
 add_executable(acc_subscriber src/acc_subscriber.cpp)
 ament_target_dependencies(acc_subscriber rclcpp my_interfaces)
 
+# Define trigger_points_client target and link libraries
+add_executable(trigger_points_client src/trigger_points_client.cpp)
+ament_target_dependencies(trigger_points_client rclcpp my_interfaces)
+
 #Install binaries to specific folder
 install(TARGETS
   minimal_publisher
@@ -52,6 +56,7 @@ install(TARGETS
   minimal_server
   minimal_client
   acc_subscriber
+  trigger_points_client
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
