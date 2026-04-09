@@ -24,6 +24,7 @@ setup(
             "minimal_subscriber = py_pkg.minimal_subscriber:main",
             "minimal_server = py_pkg.minimal_server:main",
             "minimal_client = py_pkg.minimal_client:main",
+            "acc_publisher = py_pkg.acc_publisher:main",
         ],
     },
 )

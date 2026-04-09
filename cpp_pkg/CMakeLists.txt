@@ -11,6 +11,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(example_interfaces REQUIRED)
+find_package(my_interfaces REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -40,12 +41,17 @@ ament_target_dependencies(minimal_server rclcpp example_interfaces)
 add_executable(minimal_client src/minimal_client.cpp)
 ament_target_dependencies(minimal_client rclcpp example_interfaces)
 
+# Define Acc subscriber target and link_libraries
+add_executable(acc_subscriber src/acc_subscriber.cpp)
+ament_target_dependencies(acc_subscriber rclcpp my_interfaces)
+
 #Install binaries to specific folder
 install(TARGETS
   minimal_publisher
   minimal_subscriber
   minimal_server
   minimal_client
+  acc_subscriber
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
