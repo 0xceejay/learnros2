@@ -26,6 +26,7 @@ setup(
             "minimal_client = py_pkg.minimal_client:main",
             "acc_publisher = py_pkg.acc_publisher:main",
             "trigger_points_server = py_pkg.trigger_points_server:main",
+            "publisher_with_params = py_pkg.publisher_with_params:main",
         ],
     },
 )
